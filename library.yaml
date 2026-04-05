@@ -10,6 +10,140 @@ default_dirs:
     - global: ~/.claude/commands/
 
 library:
-  skills: []
+  skills:
+    # === OPENCLAW WORKSPACE SKILLS (live on Mac Mini) ===
+    - name: daily-lesson
+      description: "Trading: Daily TA Lesson - 30-day Kiyotaka curriculum delivered to Telegram"
+      source: ~/.openclaw/workspace/skills/daily-lesson/SKILL.md
+
+    - name: domain-discovery
+      description: "Meta-skill: Scan GitHub repos, discover domain areas, catalog in Obsidian"
+      source: ~/.openclaw/workspace/skills/domain-discovery/SKILL.md
+    - name: expert-scheduler
+      description: "Trading: Expert Scheduler - Start, stop, check status of 13 expert system jobs"
+      source: ~/.openclaw/workspace/skills/expert-scheduler/SKILL.md
+    - name: gmail-inbox-monitor
+      description: "Monitor greg@gbautomation.xyz inbox every 5 min. Classifies, auto-labels, Telegram alerts"
+      source: ~/.openclaw/workspace/skills/gmail-inbox-monitor/SKILL.md
+    - name: linkedin-job-applier
+      description: "Search LinkedIn Jobs, evaluate against criteria, apply via Easy Apply"
+      source: ~/.openclaw/workspace/skills/linkedin-job-applier/SKILL.md
+    - name: linkedin-job-scanner
+      description: "Scan LinkedIn messages for job opportunities ($175k+, remote)"
+      source: ~/.openclaw/workspace/skills/linkedin-job-scanner/SKILL.md
+    - name: mac-mini-login
+      description: "Mac Mini access reference - SSH, OpenClaw gateway, agents, secrets, troubleshooting"
+      source: ~/.openclaw/workspace/skills/mac-mini-login/SKILL.md
+    - name: onboarding
+      description: "Infrastructure: Harden OpenClaw config, validate API keys, set up extensions, health checks"
+      source: ~/.openclaw/workspace/skills/onboarding/SKILL.md
+    - name: setup-openclaw
+      description: "Infrastructure: Install OpenClaw on Windows laptop, deploy workspace, configure secrets"
+      source: ~/.openclaw/workspace/skills/setup-openclaw/SKILL.md
+    - name: back-tester
+      description: "Trading: Backtesting suite - run backtests, optimize strategies, scout datasets"
+      source: ~/repos/consulting-co/.claude/skills/consulting-intake/client-sessions/20260221-greg-trading/workspace/skills/back-tester/run-backtest/SKILL.md
+    - name: charting
+      description: "Trading: Chart generation - equity curves, price charts"
+      source: ~/repos/consulting-co/.claude/skills/consulting-intake/client-sessions/20260221-greg-trading/workspace/skills/charting/generate-chart/SKILL.md
+    - name: discord-scraping
+      description: "Trading: Discord signal pipeline - scrape feeds, monitor, morning brief"
+      source: ~/repos/consulting-co/.claude/skills/consulting-intake/client-sessions/20260221-greg-trading/workspace/skills/discord-scraping/scrape-discord/SKILL.md
+    - name: portfolio-manager
+      description: "Trading: Portfolio management - monitor positions, manage risk, trade journal"
+      source: ~/repos/consulting-co/.claude/skills/consulting-intake/client-sessions/20260221-greg-trading/workspace/skills/portfolio-manager/monitor-positions/SKILL.md
+
+    # === CONSULTING-CO SKILLS (Claude Code workspace) ===
+    - name: consulting-intake
+      description: "Post-session transcript processor - extracts domains, builds workspace, generates skills"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/consulting-intake/SKILL.md
+    - name: intake-session-processor
+      description: "Post-session transcript processor for GBAutomation consulting"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/intake-session-processor/SKILL.md
+    - name: skills-installer
+      description: "Transform workflow catalog entries into validated SKILL.md files with agent assignment"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/skills-installer/SKILL.md
+    - name: workflow-ideator
+      description: "AI-generate workflow and skill ideas based on business domain, APIs, pain points"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/workflow-ideator/SKILL.md
+    - name: obsidian-vault
+      description: "Obsidian vault management and knowledge base operations"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/obsidian-vault/SKILL.md
+    - name: obsidian-agent-archiver
+      description: "Document AI agents, ADWs, skills into visual Obsidian knowledge base"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/obsidian-agent-archiver/SKILL.md
+    - name: graphiti
+      description: "Manage Graphiti knowledge graph MCP server for persistent AI memory"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/graphiti/SKILL.md
+    - name: tac-kb-query
+      description: "Query TAC knowledge bases using Graphiti and pgvector for methodology learning"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/tac-kb-query/SKILL.md
+    - name: gmail-manager
+      description: "Comprehensive Gmail management - summarization, contacts, newsletters, drafts"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/gmail-manager/SKILL.md
+    - name: aws-config-manager
+      description: "AWS config management - credentials, secrets, billing, CloudWatch alerts"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/aws-config-manager/SKILL.md
+    - name: github-issue-manager
+      description: "GitHub issue management - create, monitor, analyze issues, track fixes"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/github-issue-manager/SKILL.md
+    - name: github-actions-manager
+      description: "Manage GitHub Actions workflows, monitor CI/CD, trigger deployments"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/github-actions-manager/SKILL.md
+    - name: claude-code-plugin-builder
+      description: "Build Claude Code marketplace plugins with guided workflow"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/claude-code-plugin-builder/SKILL.md
+    - name: client-linkedin
+      description: "Quick LinkedIn professional overview for consulting intake"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/client-linkedin/SKILL.md
+    - name: client-personal-intel
+      description: "Deep personal intelligence research - Instagram, YouTube, web presence analysis"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/client-personal-intel/SKILL.md
+    - name: consulting-admin
+      description: "Consulting admin agent - client onboarding, Drive setup, email drafting"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/consulting-admin/SKILL.md
+    - name: subscription-usage-checker
+      description: "Check credits, usage, costs across all subscriptions (Anthropic, AWS, OpenAI, etc.)"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/subscription-usage-checker/SKILL.md
+    - name: cost-tracker
+      description: "Track and report AI service costs across providers"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/cost-tracker/SKILL.md
+    - name: create-second-brain-prd
+      description: "Generate personalized Second Brain PRD from requirements template"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/create-second-brain-prd/SKILL.md
+    - name: knowledge-sync
+      description: "Sync knowledge across repos, Obsidian vaults, and agent workspaces"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/knowledge-sync/SKILL.md
+    - name: adw-dispatch
+      description: "Dispatch autonomous development workflows (ADWs) to coding agents"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/adw-dispatch/SKILL.md
+    - name: plan-build-review-adw
+      description: "Plan-Build-Review cycle for autonomous development workflows"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/plan-build-review-adw/SKILL.md
+    - name: adw-status
+      description: "Check status of running autonomous development workflows"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/adw-status/SKILL.md
+    - name: worktree-manager
+      description: "Manage git worktrees for parallel development"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/worktree-manager/SKILL.md
+    - name: linear-build-agent
+      description: "Accept plan, create Linear project + issues, run autonomous coding sessions"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/linear-build-agent/SKILL.md
+    - name: revstar-quickstart-workflow
+      description: "Guide users through AI developer workflows for RevStar QuickStart projects"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/revstar-quickstart-workflow/SKILL.md
+    - name: multi-agent-orchestrator-administration
+      description: "Administer multi-agent orchestrator - agent config, monitoring, scaling"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/multi-agent-orchestrator-administration/SKILL.md
+    - name: github-cdk-workflows
+      description: "GitHub CDK workflow construction and management"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/github-cdk-workflows/SKILL.md
+    - name: mtg-art-finder
+      description: "Find Magic: The Gathering card art"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/mtg-art-finder/SKILL.md
+    - name: gws-suite
+      description: "Full Google Workspace skill suite - Gmail, Drive, Calendar, Sheets, Docs, Chat, Meet, Forms, Slides, Keep, Scripts, + 30 recipes and 8 personas"
+      source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/gws/gws-workflow/SKILL.md
+
   agents: []
   prompts: []
