@@ -1,0 +1,19 @@
+#!/bin/bash
+# pre-commit hook: if library.yaml changed, run Obsidian sync
+# Install: cd ~/repos/the-library && git config core.hooksPath .githooks
+
+STAGED_FILES=$(git diff --cached --name-only)
+
+if echo "$STAGED_FILES" | grep -q "library.yaml"; then
+    echo "📚 library.yaml changed — running Obsidian sync..."
+    python3 "$(git rev-parse --show-toplevel)/scripts/library-to-obsidian.py"
+    
+    # Stage the generated index if it exists
+    OBSIDIAN_KB="${OBSIDIAN_KB:-$HOME/repos/obsidian/Gbautomation/AI-Agent-KB}"
+    INDEX="$OBSIDIAN_KB/skills/_Skill-Index.md"
+    if [ -f "$INDEX" ]; then
+        echo "📊 Index regenerated: $INDEX"
+    fi
+    
+    echo "✅ Obsidian sync complete"
+fi

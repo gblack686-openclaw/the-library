@@ -35,3 +35,15 @@ list:
 # Search the catalog by keyword
 search keyword:
     claude --dangerously-skip-permissions --model opus "/library search {{keyword}}"
+
+# Sync library.yaml → Obsidian AI-Agent-KB (bidirectional)
+sync-obsidian:
+    python3 scripts/library-to-obsidian.py
+
+# Dry-run sync to preview changes
+sync-obsidian-dry:
+    python3 scripts/library-to-obsidian.py --dry-run
+
+# Regenerate Obsidian index only (no card creation/updates)
+sync-obsidian-index:
+    python3 scripts/library-to-obsidian.py --index-only
