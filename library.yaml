@@ -145,9 +145,6 @@ library:
       description: "Full Google Workspace skill suite - Gmail, Drive, Calendar, Sheets, Docs, Chat, Meet, Forms, Slides, Keep, Scripts, + 30 recipes and 8 personas"
       source: https://github.com/gblack686/consulting-co/blob/main/.claude/skills/gws/gws-workflow/SKILL.md
 
-  agents: []
-  prompts: []
-# synced
 
     # === FORGE SKILLS (coding delegate patterns) ===
     - name: forge-tac-scan
@@ -157,3 +154,7 @@ library:
     - name: drive-claw-empire
       description: "Drive Claw Empire — browser automation, API control, and Pi multi-team integration"
       source: ~/.openclaw/workspace/skills/drive-claw-empire/SKILL.md
+
+  agents: []
+  prompts: []
+# synced
