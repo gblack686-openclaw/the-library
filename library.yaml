@@ -148,3 +148,12 @@ library:
   agents: []
   prompts: []
 # synced
+
+    # === FORGE SKILLS (coding delegate patterns) ===
+    - name: forge-tac-scan
+      description: "Forge pre-flight scan — Search TAC repos for existing patterns before coding"
+      source: ~/.openclaw/workspace/skills/forge-tac-scan/SKILL.md
+
+    - name: drive-claw-empire
+      description: "Drive Claw Empire — browser automation, API control, and Pi multi-team integration"
+      source: ~/.openclaw/workspace/skills/drive-claw-empire/SKILL.md
